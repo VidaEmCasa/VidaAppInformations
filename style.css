@@ -1,0 +1,22 @@
+#logo-full{
+    display: block;
+}
+#logo-toggle{
+    display: none;
+}
+#footer{
+    position: absolute;
+}
+
+@media screen and (max-width: 991.5px) 
+{
+    #logo-full{
+        display: none;
+    }
+    #logo-toggle{
+        display: block;
+    }
+    #footer{
+        position: relative;
+    }
+}
