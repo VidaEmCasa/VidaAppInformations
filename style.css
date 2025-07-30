@@ -239,28 +239,9 @@ body {
     transform: translateX(0.25rem);
 }
 
-/* Footer */
-.footer {
-    background-color: var(--color-gray-900);
-    padding: 1.5rem 0;
-}
-
-.footer-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.footer-text {
-    text-align: center;
-    color: var(--color-gray-400);
-    font-size: 0.875rem;
-}
-
 /* Responsive Design */
 @media (min-width: 640px) {
-    .nav-container,
-    .footer-container {
+    .nav-container {
         padding: 0 1.5rem;
     }
     
@@ -276,8 +257,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .nav-container,
-    .footer-container {
+    .nav-container {
         padding: 0 2rem;
     }
     

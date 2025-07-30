@@ -1,7 +1,5 @@
 // Initialize Lucide icons when the page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all Lucide icons
-    lucide.createIcons();
     
     // Add loading animation to icons
     const icons = document.querySelectorAll('[data-lucide]');

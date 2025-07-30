@@ -1,7 +1,6 @@
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Lucide icons
-    lucide.createIcons();
+
     
     // Initialize FAQ functionality
     initializeFAQ();
