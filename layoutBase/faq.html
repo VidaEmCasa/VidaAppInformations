@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes - Vida em Casa</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/toggle-logo.png">
+    <link rel="stylesheet" href="../cssBase/faq.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo-container">
+                    <a href="/" class="logo-link">
+                        <img src="../assets/Logo VeC Horizontal.png" alt="Logo Vida em casa" class="logo-full" id="logo-full">
+                        <img src="../assets/toggle-logo.png" alt="Logo Vida em casa" class="logo-toggle" id="logo-toggle">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- header -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html" class="breadcrumb-link">
+                    <i data-lucide="home"></i>
+                    <span>Início</span>
+                </a>
+                <i data-lucide="chevron-right" class="breadcrumb-separator"></i>
+                <span class="breadcrumb-current">Perguntas Frequentes</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <div class="page-header">
+                <h1 class="page-title">Perguntas Frequentes</h1>
+                <p class="page-description">Encontre respostas rápidas para as dúvidas mais comuns sobre nosso aplicativo</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar perguntas..." class="search-input">
+                    <button type="button" id="clearSearch" class="clear-search" style="display: none;">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <!-- Login e Senha -->
+                <div class="faq-category" data-category="login">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-lucide="log-in"></i>
+                        </div>
+                        <h2 class="category-title">Login e Senha</h2>
+                    </div>
+                    
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" data-question="esqueci-senha">
+                                <span>Como recuperar minha senha?</span>
+                                <i data-lucide="chevron-down" class="faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Para recuperar sua senha, siga estes passos:</p>
+                                <ol>
+                                    <li>Na tela de login, clique em "Esqueci minha senha"</li>
+                                    <li>Digite seu e-mail cadastrado</li>
+                                    <li>Verifique sua caixa de entrada e spam</li>
+                                    <li>Clique no link recebido e defina uma nova senha</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" data-question="primeiro-acesso">
+                                <span>Como fazer o primeiro acesso ao aplicativo?</span>
+                                <i data-lucide="chevron-down" class="faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Para seu primeiro acesso:</p>
+                                <ol>
+                                    <li>Baixe o aplicativo na App Store ou Google Play</li>
+                                    <li>Use as credenciais fornecidas pela equipe</li>
+                                    <li>Altere sua senha no primeiro login</li>
+                                    <li>Complete seu perfil com as informações solicitadas</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" data-question="conta-bloqueada">
+                                <span>Minha conta foi bloqueada, o que fazer?</span>
+                                <i data-lucide="chevron-down" class="faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>#soon</p>
+                                <ul>
+                                    <li>Aqui para editar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">Copyright by Vida em Casa Home Care</p>
+        </div>
+    </footer>
+
+    <script src="../jsBase/faq.js"></script>
+</body>
+</html>
