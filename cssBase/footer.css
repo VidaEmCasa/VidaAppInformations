@@ -21,6 +21,7 @@
 .footer-logo-section {
   display: flex;
   align-items: flex-start;
+  margin-top: 25%;
 }
 
 .footer-logo {
@@ -35,6 +36,29 @@
   margin-bottom: 1rem;
   color: white;
 }
+.footer-title-1{
+  font-size: 0.875rem;  /* Menor (equivale a 14px se a base for 16px) */
+  font-weight: 400;     /* Mais leve (peso de fonte normal, sem negrito) */
+  color: #6c757d;      /* Cor de cinza profissional, bem mais clara que preto */
+  text-decoration: none;/* Remove o sublinhado padrão do link */
+  margin-bottom: 0;     /* Remove a margem que existia antes */
+}
+
+.copyicon{
+  color: #6c757d;
+  margin-top: 25px;
+  width: 16px;  /* Defina a largura desejada */
+  height: 16px;
+}
+
+.copyright-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Cria um espaço de 8px entre o ícone e o texto */
+}
+
 
 .schedule-title {
   margin-top: 1.5rem;
@@ -110,20 +134,25 @@
 }
 
 .social-link.instagram {
-  background-color: #e4405f;
+  background-color: white;
+  color: black;
 }
 
 .social-link.facebook {
-  background-color: #1877f2;
+  background-color: white;
+  color: black;
 }
 
 .social-link.linkedin {
-  background-color: #0a66c2;
+  background-color: white;
+  color: black;
 }
-
-.social-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.social-link.instagram:hover,
+.social-link.facebook:hover,
+.social-link.linkedin:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: blue;
 }
 
 .social-link i {

@@ -1,37 +1,31 @@
-// NOVO CÓDIGO PARA /jsBase/footer.js
+// Arquivo: /jsBase/footer.js (VERSÃO FINAL)
 
 document.addEventListener("DOMContentLoaded", function() {
-  const footerPlaceholder = document.getElementById("footer-placeholder");
+    
+    // Função para avisar a página que os ícones foram renderizados
+    const notifyIconsRendered = () => {
+        document.dispatchEvent(new CustomEvent('iconsRendered'));
+    };
 
-  // Esta é a função que ativa todos os ícones na página.
-  // Vamos garantir que ela seja chamada apenas uma vez, no momento certo.
-  const activateAllIcons = () => {
+    // 1ª ATIVAÇÃO: Ícones da página principal
     lucide.createIcons();
-  };
+    notifyIconsRendered(); // Avisa que a primeira leva de ícones está pronta
 
-  // Verificamos se a página atual realmente tem um lugar para o rodapé.
-  if (footerPlaceholder) {
-    // Se tiver, buscamos o arquivo do rodapé.
-    fetch("./layoutBase/footer.html") // <-- VERIFIQUE SE ESTE CAMINHO ESTÁ CORRETO!
-      .then(response => {
-        // Se o arquivo não for encontrado (erro 404), gera um erro.
-        if (!response.ok) {
-          throw new Error('Arquivo do rodapé não encontrado.');
-        }
-        return response.text();
-      })
-      .then(data => {
-        // O rodapé foi baixado com sucesso!
-        // 1. Inserimos o HTML do rodapé na página.
-        footerPlaceholder.innerHTML = data;
-        
-      })
-      .catch(error => {
-        // Se houver qualquer erro ao buscar o rodapé...
-        console.error('Falha ao carregar o rodapé:', error);
-        
-      });
-  }
+    const footerPlaceholder = document.getElementById("footer-placeholder");
 
-  activateAllIcons();
+    if (footerPlaceholder) {
+        fetch("../layoutBase/footer.html")
+            .then(response => {
+                if (!response.ok) throw new Error('Rodapé não encontrado.');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                
+                // 2ª ATIVAÇÃO: Ícones do rodapé que acabaram de ser adicionados
+                lucide.createIcons();
+                notifyIconsRendered(); // Avisa novamente, caso algo precise reagir aos novos ícones
+            })
+            .catch(error => console.error('Falha ao carregar o rodapé:', error));
+    }
 });

@@ -1,4 +1,25 @@
-// Initialize Lucide icons when the page loads
+// Arquivo: JS da sua página principal (VERSÃO AJUSTADA)
+
+// Função que configura as animações e interações dos ícones
+function setupIconInteractions() {
+    // SELETOR CORRIGIDO: Agora selecionamos os SVGs criados pela biblioteca
+    const icons = document.querySelectorAll('.lucide'); 
+    
+    icons.forEach(icon => {
+        // Evita readicionar classes a ícones que já foram processados
+        if (icon.classList.contains('icon-loaded')) return;
+
+        icon.classList.add('icon-loading');
+        setTimeout(() => {
+            icon.classList.remove('icon-loading');
+            icon.classList.add('icon-loaded');
+        }, Math.random() * 200);
+    });
+}
+
+// OUVINTE DE EVENTO: Só executa a função acima quando recebe o sinal do footer.js
+document.addEventListener('iconsRendered', setupIconInteractions);
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // Add loading animation to icons
