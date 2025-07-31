@@ -25,19 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // 1. Inserimos o HTML do rodapé na página.
         footerPlaceholder.innerHTML = data;
         
-        // 2. AGORA, e somente agora, ativamos TODOS os ícones (da página e do rodapé).
-        activateAllIcons();
       })
       .catch(error => {
         // Se houver qualquer erro ao buscar o rodapé...
         console.error('Falha ao carregar o rodapé:', error);
         
-        // ...ainda assim tentamos ativar os ícones da página principal para que eles não sumam.
-        activateAllIcons();
       });
-  } else {
-    // Se esta página NÃO tem um placeholder para o rodapé,
-    // simplesmente ativamos os ícones que já existem nela.
-    activateAllIcons();
   }
+
+  activateAllIcons();
 });
