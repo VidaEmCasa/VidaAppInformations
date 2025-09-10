@@ -78,30 +78,92 @@
                                 <i data-lucide="chevron-down" class="faq-icon"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Soon</p>
-                                <ol>
-                                    <li>Soon</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" data-question="esqueci-senha">
-                                <span>Como assinar</span>
-                                <i data-lucide="chevron-down" class="faq-icon"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <img src="../assets/0829.gif" alt="Descrição do GIF">
+                                <div class="faq-media-content">
+                                    <div class="faq-gif-container">
+                                        <img src="/assets/0829.gif" alt="Descrição do GIF">
+                                    </div>
+
+                                    <div class="faq-steps-container">
+                                        <div class="faq-steps-scrollable">
+                                            <div class="faq-step">
+                                                <b>1. Tela principal:</b><br>
+                                                Use a barra de pesquisa ou filtros para localizar o paciente.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>2. Abrir ficha:</b><br>
+                                                Toque no cartão do paciente na lista.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>3. Visualizar infos:</b><br>
+                                                Confira dados, origem, destino, motivo, status e observações.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>4. Iniciar atendimento:</b><br>
+                                                Toque em <b>Iniciar</b> e confirme na caixa que aparece.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>5. Abrir formulário:</b><br>
+                                                Escolha <b>Editar</b> ou <b>Preencher</b>.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>6. Preencher formulário:</b><br>
+                                                Complete VTR, materiais, equipamentos, sinais vitais e observações.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>7. Salvar dados:</b><br>
+                                                Toque em <b>Cadastrar</b> para registrar.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>8. Assinatura:</b><br>
+                                                Toque em <b>Assinar</b>, selecione equipe e abra o quadro de assinatura.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>9. Enviar assinatura:</b><br>
+                                                Assine, use <b>Limpar</b> se necessário e clique <b>Enviar Assinatura</b>.
+                                            </div>
+                                            <div class="faq-step">
+                                                <b>10. Finalização:</b><br>
+                                                Após a mensagem de sucesso, o atendimento estará concluído.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>      
                     </div>
                 </div>
             </div>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-    <script src="../jsBase/footer.js"></script>
-
-    <script src="../jsBase/faq.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isActive = button.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-question').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.classList.remove('active');
+                        otherButton.nextElementSibling.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    button.classList.remove('active');
+                    answer.classList.remove('active');
+                } else {
+                    button.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
